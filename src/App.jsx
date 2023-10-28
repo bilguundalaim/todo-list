@@ -1,9 +1,12 @@
 import './App.css'
+import { Header, Sidebar, Content } from './components'
 
 function App() {
   return (
     <>
-      <h1>Hello, World!</h1>
+      <Header />
+      <Sidebar />
+      <Content />
     </>
   )
 }
