@@ -1,13 +1,8 @@
-import Task from "../Task/Task"
-import AddSmth from "../AddSmth/AddSmth"
+// import Task from "../Task/Task";
+// import AddSmth from "../AddSmth/AddSmth";
 
 const Content = () => {
-  return (
-    <div>
-      <AddSmth smth="Task"/>
-      <Task title="Hiii" isChecked={true}/>
-    </div>
-  )
-}
+  return <div>Content</div>;
+};
 
-export default Content
+export default Content;

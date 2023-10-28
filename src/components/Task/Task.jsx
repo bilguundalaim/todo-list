@@ -10,9 +10,15 @@ const Task = ({ title, isChecked }) => {
 
   return (
     <div className={styles.container}>
-      <input type="checkbox" name="done" id="isChecked" checked={complete} onChange={handleCheckbox}/>
+      <input
+        type="checkbox"
+        name="done"
+        id="isChecked"
+        checked={complete}
+        onChange={handleCheckbox}
+      />
       <p>{title}</p>
-      <BiRightArrow size={30} />
+      <BiRightArrow size={30} className={styles.arrowIcon} />
     </div>
   );
 };
