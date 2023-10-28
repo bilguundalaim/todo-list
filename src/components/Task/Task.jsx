@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { BiRightArrow } from "react-icons/bi";
-import "./task.css";
+import styles from "./Task.module.css";
 
 const Task = ({ title, isChecked }) => {
   const [complete, setComplete] = useState(isChecked);
@@ -9,8 +9,8 @@ const Task = ({ title, isChecked }) => {
   const handleCheckbox = () => setComplete(!complete);
 
   return (
-    <div className="container">
-      <input type="checkbox" name="done" id="isChecked" checked={complete} onClick={handleCheckbox}/>
+    <div className={styles.container}>
+      <input type="checkbox" name="done" id="isChecked" checked={complete} onChange={handleCheckbox}/>
       <p>{title}</p>
       <BiRightArrow size={30} />
     </div>

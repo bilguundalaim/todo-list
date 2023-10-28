@@ -1,9 +1,11 @@
 import Task from "../Task/Task"
+import AddSmth from "../AddSmth/AddSmth"
 
 const Content = () => {
   return (
     <div>
-      <Task title={"Hiii!!!"} isChecked={true}/>
+      <AddSmth smth="Task"/>
+      <Task title="Hiii" isChecked={true}/>
     </div>
   )
 }
