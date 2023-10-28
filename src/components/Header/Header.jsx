@@ -1,9 +1,14 @@
-// import React from 'react'
+import React from "react";
+import "./header.css";
+import Logo from "../../assets/logo.png";
 
-const Header = () => {
+function Header() {
   return (
-    <div>Header</div>
-  )
+    <header className="header-container">
+      <img src={Logo} alt='Todo list Logo'/>
+      <p>List</p>
+    </header>
+  );
 }
-
-export default Header
+  
+export default Header;
