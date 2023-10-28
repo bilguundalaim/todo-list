@@ -1,0 +1,19 @@
+.container {
+  max-width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+}
+
+.arrowIcon {
+  position: absolute;
+  right: 0;
+  margin-right: 8px;
+}
