@@ -1,8 +1,10 @@
-// import React from 'react'
+import Task from "../Task/Task"
 
 const Content = () => {
   return (
-    <div>Content</div>
+    <div>
+      <Task title={"Hiii!!!"} isChecked={true}/>
+    </div>
   )
 }
 
