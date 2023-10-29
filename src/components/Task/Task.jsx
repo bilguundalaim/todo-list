@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { BiRightArrow } from "react-icons/bi";
+import { BiChevronRight } from "react-icons/bi";
 import styles from "./Task.module.css";
 
 const Task = ({ title, isChecked }) => {
@@ -18,7 +18,7 @@ const Task = ({ title, isChecked }) => {
         onChange={handleCheckbox}
       />
       <p>{title}</p>
-      <BiRightArrow size={30} className={styles.arrowIcon} />
+      <BiChevronRight size={24} className={styles.arrowIcon} />
     </div>
   );
 };

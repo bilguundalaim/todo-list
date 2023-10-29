@@ -10,10 +10,12 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin: 0 8px;
+  accent-color: #ccc;
 }
 
 .arrowIcon {
   position: absolute;
   right: 0;
   margin-right: 8px;
+  color: #ccc;
 }
