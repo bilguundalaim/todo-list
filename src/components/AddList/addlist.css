@@ -1,7 +1,11 @@
 .addlist-container {
     position: absolute;
-    margin-left: 30%;
-    margin-top: 8%;
+    /* centered component using transform. */
+    /* margin-left: 30%;
+    margin-top: 8%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     visibility: hidden;
 }
 
