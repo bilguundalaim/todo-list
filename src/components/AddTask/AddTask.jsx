@@ -1,8 +1,9 @@
 import styles from "./AddTask.module.css";
 import { setTask } from "../../functions/task";
 import { useState } from "react";
+import PropTypes from "prop-types"
 
-const AddTask = () => {
+const AddTask = ({ isVisible }) => {
   const [newTask, setNewTask] = useState({
     title: "",
     description: "",
@@ -13,6 +14,7 @@ const AddTask = () => {
   const handleAddButton = () => {
     console.log(newTask);
     setTask(newTask);
+
   };
 
   const handleTitleChange = (e) => {
@@ -44,7 +46,10 @@ const AddTask = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ display: isVisible ? "flex" : "none" }}
+    >
       <h1>Task:</h1>
 
       <input
@@ -92,5 +97,9 @@ const AddTask = () => {
     </div>
   );
 };
+
+AddTask.propTypes = {
+  isVisible: PropTypes.bool,
+}
 
 export default AddTask;

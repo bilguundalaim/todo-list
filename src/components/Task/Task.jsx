@@ -18,7 +18,7 @@ const Task = ({ title, isChecked }) => {
         onChange={handleCheckbox}
       />
       <p>{title}</p>
-      <BiChevronRight size={24} className={styles.arrowIcon} />
+      <BiChevronRight size={30} className={styles.arrowIcon} />
     </div>
   );
 };

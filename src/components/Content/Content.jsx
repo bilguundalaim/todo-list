@@ -2,8 +2,13 @@ import styles from "./Content.module.css";
 import Task from "../Task/Task";
 import AddSmth from "../AddSmth/AddSmth";
 import AddTask from "../AddTask/AddTask";
+import { useState } from "react";
 
 const Content = () => {
+  const [isAddTaskVisible, setIsAddTaskVisible] = useState(false);
+
+  const showAddTask = () => setIsAddTaskVisible(true);
+
   const taskData = [
     { title: "Task 1", isChecked: false },
     { title: "Task 2", isChecked: true },
@@ -14,7 +19,7 @@ const Content = () => {
 
   return (
     <div className={styles.container}>
-      <AddSmth smth="Task" />
+      <AddSmth smth="Task" showAddTask={showAddTask}/>
 
       <div>
         {taskData.map((task) => (
@@ -25,8 +30,8 @@ const Content = () => {
           />
         ))}
       </div>
-      
-      <AddTask />
+
+      <AddTask isVisible={isAddTaskVisible}/>
     </div>
   );
 };
