@@ -3,7 +3,7 @@ import { setTask } from "../../functions/task";
 import { useState } from "react";
 import PropTypes from "prop-types"
 
-const AddTask = ({ isVisible }) => {
+const AddTask = (isVisible) => {
   const [newTask, setNewTask] = useState({
     title: "",
     description: "",
@@ -11,10 +11,12 @@ const AddTask = ({ isVisible }) => {
     dueDate: "",
   });
 
+  const [visibility, setVisibility] = useState(isVisible);
+
   const handleAddButton = () => {
     console.log(newTask);
     setTask(newTask);
-
+    setVisibility(false);
   };
 
   const handleTitleChange = (e) => {
@@ -48,7 +50,7 @@ const AddTask = ({ isVisible }) => {
   return (
     <div
       className={styles.container}
-      style={{ display: isVisible ? "flex" : "none" }}
+      style={{display: visibility ? "flex" : "none"}}
     >
       <h1>Task:</h1>
 
