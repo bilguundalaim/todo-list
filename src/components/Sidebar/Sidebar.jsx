@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./sidebar.css";
+import Heart from "../../assets/heart.png";
 import Search from "../../assets/search.png";
 import Inbox from "../../assets/inbox.png";
 import Today from "../../assets/day.png";
 import Week from "../../assets/week.png";
 import Ham from "../../assets/hamburger.png";
 import Add from "../../assets/plus.png";
+import AddList from "../AddList/AddList.jsx";
 
 function Sidebar() {
   const tasks = [
@@ -25,42 +27,60 @@ function Sidebar() {
       <img src={task.icon} alt={task.name} />{task.name}
     </div>
   ));
+
   const filteredLists = lists.filter(list => list.name.toLowerCase().includes(val.toLowerCase())).map(list => (
     <div key={list.name}>
       <img src={list.icon} alt={list.name} />{list.name}
     </div>
   ));
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const [customLists, setCustomLists] = useState([]);
+  const handleAddNewList = (listName) => {
+    setCustomLists(prevLists => [...prevLists, { name: listName }]);
+  };
+
+  // const isVisible = "false";
+
+  const handleVisibility = () => setIsVisible(true);
+
   return (
-    <div className="sidebar-container">
-      <div className="side">
-        <div className="menu">
-          <h1>Menu</h1>
-          <div className="hamburger"><img src={Ham} alt='Hamburger icon'/></div>
-        </div>
-        <div className="search">
-          <img src={Search} alt='Search icon'/>
-          <input type="text" value={val} onChange={e => setVal(e.target.value)} placeholder="Search" />
-        </div>
-          <div className="search-results">
-            {val.length > 0 ? (filteredTasks.length > 0 ? (filteredTasks) : "No matching tasks") : "Empty task"}
-            {val.length > 0 ? (filteredLists.length > 0 ? (filteredLists) : "No matching lists") : "Empty list"}
+    <div>
+      <div className="sidebar-container">
+        <div className="side">
+          <div className="menu">
+            <h1>Menu</h1>
+            <div className="hamburger"><img src={Ham} alt='Hamburger icon'/></div>
           </div>
-        <div className="tasks">
-          <h2>TASKS</h2>
-          <ul>
-            <li><img src={Inbox} alt='Inbox icon'/>Inbox</li>
-            <li><img src={Today} alt='Today icon'/>Today</li>
-            <li><img src={Week} alt='Week icon'/>This week</li>
-          </ul>
-        </div>
-        <div className="lists">
-          <h2>LISTS</h2>
-          <ul>
-            <li><img src={Add} alt='Add icon'/>Add New List</li>
-          </ul>
+          <div className="search">
+            <img src={Search} alt='Search icon'/>
+            <input type="text" value={val} onChange={e => setVal(e.target.value)} placeholder="Search" />
+          </div>
+            <div className="search-results">
+              {val.length > 0 ? (filteredTasks.length > 0 ? (filteredTasks) : "No matching tasks") : "Empty task"}
+              {val.length > 0 ? (filteredLists.length > 0 ? (filteredLists) : "No matching lists") : "Empty list"}
+            </div>
+          <div className="tasks">
+            <h2>TASKS</h2>
+            <ul>
+              <li><img src={Inbox} alt='Inbox icon'/>Inbox</li>
+              <li><img src={Today} alt='Today icon'/>Today</li>
+              <li><img src={Week} alt='Week icon'/>This week</li>
+            </ul>
+          </div>
+          <div className="lists">
+            <h2>LISTS</h2>
+            <ul>
+              <li onClick={handleVisibility}><img src={Add} alt='Add icon'/>Add New List</li>
+              {customLists.map(list => (
+                <li key={list.name}><img src={Heart} alt={list.name} />{list.name}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
+      <AddList isVisible={isVisible} onAddList={handleAddNewList}/>
     </div>
   );
 }

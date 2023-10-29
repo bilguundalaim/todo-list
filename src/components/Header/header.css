@@ -1,25 +1,25 @@
 .header-container {
     margin: 0;
     padding: 0;
-    /* background-image: linear-gradient(to right, #b3e7fd, #ffdbff, #c4cbff, #ffddb4); */
+    background-image: linear-gradient(to right, #b3e7fd, #ffdbff, #c4cbff, #ffddb4);
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 10px;
     height: 60px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-container img {
-    margin-left: 10px;
-    height: 50px;
+    margin-left: 0px;
+    height: 70px;
+    width: 306px;
     border-radius: 10px;
 }
 
 .header-container p {
     font-family: sans-serif;
-    margin-bottom: 10px;
-    font-size: 31px;
+    font-size: 40px;
+    margin-top: 20px;
     color: #83daff;
     font-weight: bold;
 }
