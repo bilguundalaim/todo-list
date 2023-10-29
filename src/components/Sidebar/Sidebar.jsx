@@ -8,6 +8,7 @@ import Week from "../../assets/week.png";
 import Ham from "../../assets/hamburger.png";
 import Add from "../../assets/plus.png";
 import AddList from "../AddList/AddList.jsx";
+import { AiOutlineDelete } from "react-icons/ai";
 
 function Sidebar() {
   const tasks = [
