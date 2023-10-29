@@ -1,9 +1,9 @@
 import styles from "./AddTask.module.css";
 import { setTask } from "../../functions/task";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types"
 
-const AddTask = (isVisible) => {
+const AddTask = ({ isVisible }) => {
   const [newTask, setNewTask] = useState({
     title: "",
     description: "",
@@ -12,6 +12,10 @@ const AddTask = (isVisible) => {
   });
 
   const [visibility, setVisibility] = useState(isVisible);
+
+  useEffect(() => {
+    setVisibility(isVisible);
+  }, [isVisible])
 
   const handleAddButton = () => {
     console.log(newTask);
@@ -52,6 +56,7 @@ const AddTask = (isVisible) => {
       className={styles.container}
       style={{display: visibility ? "flex" : "none"}}
     >
+      {console.log(isVisible, visibility)}
       <h1>Task:</h1>
 
       <input
