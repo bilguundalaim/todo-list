@@ -1,19 +1,96 @@
 import styles from "./AddTask.module.css";
+import { setTask } from "../../functions/task";
+import { useState } from "react";
 
 const AddTask = () => {
+  const [newTask, setNewTask] = useState({
+    title: "",
+    description: "",
+    list: "Personal",
+    dueDate: "",
+  });
+
+  const handleAddButton = () => {
+    console.log(newTask);
+    setTask(newTask);
+  };
+
+  const handleTitleChange = (e) => {
+    setNewTask({
+      ...newTask,
+      title: e.target.value,
+    });
+  };
+
+  const handleDescriptionChange = (e) => {
+    setNewTask({
+      ...newTask,
+      description: e.target.value,
+    });
+  };
+
+  const handleListChange = (e) => {
+    setNewTask({
+      ...newTask,
+      list: e.target.value,
+    });
+  };
+
+  const handleDueDateChange = (e) => {
+    setNewTask({
+      ...newTask,
+      dueDate: e.target.value,
+    });
+  };
+
   return (
     <div className={styles.container}>
-      <h1>Task</h1>
-      <input type="text" />
-      <input type="text" />
-      <label htmlFor="">List</label>
-      <select name="" id=""></select>
-      <label htmlFor="">Due Date</label>
-      <input type="date" name="" id="" />
-      <button>Delete Task</button>
-      <button>Save Changes</button>
-    </div>
-  )
-}
+      <h1>Task:</h1>
 
-export default AddTask
+      <input
+        type="text"
+        placeholder="Title"
+        value={newTask.title}
+        onChange={handleTitleChange}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        value={newTask.description}
+        onChange={handleDescriptionChange}
+      />
+
+      <div>
+        <label htmlFor="lists">List</label>
+        <select
+          name="lists"
+          id="lists"
+          value={newTask.list}
+          onChange={handleListChange}
+        >
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+          <option value="school">School</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="datePicker">Due Date</label>
+        <input
+          type="date"
+          name="datePicker"
+          id="datePicker"
+          value={newTask.dueDate}
+          onChange={handleDueDateChange}
+        />
+      </div>
+
+      <div>
+        <button>Delete Task</button>
+        <button onClick={handleAddButton}>Save Changes</button>
+      </div>
+    </div>
+  );
+};
+
+export default AddTask;

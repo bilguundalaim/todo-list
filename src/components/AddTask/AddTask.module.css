@@ -1,3 +1,48 @@
 .container {
-  
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
 }
+
+input, select {
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  min-width: 150px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 8px;
+}
+
+.container input:nth-of-type(2) {
+  height: 100px;
+}
+
+.container > div:last-child {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container > div:last-child > button:first-child {
+  background: inherit;
+}
+
+.container > div:last-child > button:last-child {
+  background: rgb(250, 209, 27);
+}
+
