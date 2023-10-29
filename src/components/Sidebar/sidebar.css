@@ -2,8 +2,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #eeeeee;
     width: 300px;
-    height: 100vh;
-    position: fixed;
+    height: 100%;
 }
 
 .side {

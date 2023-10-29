@@ -1,6 +1,4 @@
 .header-container {
-    margin: 0;
-    padding: 0;
     background-image: linear-gradient(to right, #b3e7fd, #ffdbff, #c4cbff, #ffddb4);
     display: flex;
     justify-content: left;

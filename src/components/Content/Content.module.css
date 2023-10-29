@@ -1,4 +1,6 @@
 .container {
-  position: absolute;
+  /* position: absolute; */
+  max-width: 350px;
+  height: 100%;
   right: 0;
 }
