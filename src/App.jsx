@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Sidebar />
       <AddList />
-      {/* <Content /> */}
+      <Content />
     </>
   )
 }
