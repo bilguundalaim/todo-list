@@ -8,8 +8,8 @@ function App() {
       <Header />
       <div className={styles.container}>
         <Sidebar />
-        <AddList />
         <Content />
+        <AddList />
       </div>
     </>
   );
